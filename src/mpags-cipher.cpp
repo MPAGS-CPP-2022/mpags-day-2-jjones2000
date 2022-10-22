@@ -7,6 +7,7 @@
 // Out project headers.
 #include "TransformChar.hpp"
 #include "ProcessCommandLine.hpp"
+#include "Cipher.hpp"
 
 int main(int argc, char* argv[])
 {
