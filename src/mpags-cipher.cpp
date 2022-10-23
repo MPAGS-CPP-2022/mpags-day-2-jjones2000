@@ -4,7 +4,7 @@
 #include <vector>
 #include <fstream>
 
-// Out project headers.
+// Our project headers.
 #include "TransformChar.hpp"
 #include "ProcessCommandLine.hpp"
 #include "Cipher.hpp"
@@ -19,6 +19,10 @@ int main(int argc, char* argv[])
     bool versionRequested{false};
     std::string inputFile{""};
     std::string outputFile{""};
+
+    // Variables for cipher.
+    const bool encrypt = true;
+    const size_t key = 5;
 
     // Check that there are arguments.
     if (!processCommandLine(cmdLineArgs, helpRequested, versionRequested, inputFile, outputFile))
@@ -79,8 +83,8 @@ int main(int argc, char* argv[])
     }
     }
     std::string outputText {""};
-
-   // Warn that output file option not yet implemented
+    outputText = runCaesarCipher(inputText, key, encrypt);
+    // Warn that output file option not yet implemented
     if (!outputFile.empty()) {
 	std::ofstream out_file {outputFile};
 	if (out_file.good()){
