@@ -5,6 +5,6 @@
 #include <vector>
 
 std::string runCaesarCipher( const std::string& inputText,
-	const size_t key, const bool encrypt);
+	const int key, const bool encrypt);
 
 #endif // MPAGSCIPHER_CIPHER

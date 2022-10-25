@@ -21,11 +21,11 @@ int main(int argc, char* argv[])
     std::string outputFile{""};
 
     // Variables for cipher.
-    const bool encrypt = false;
-    const size_t key = 5;
+    bool encrypt{true};
+    int key = 0;
 
     // Check that there are arguments.
-    if (!processCommandLine(cmdLineArgs, helpRequested, versionRequested, inputFile, outputFile))
+    if (!processCommandLine(cmdLineArgs, helpRequested, versionRequested, inputFile, outputFile, encrypt, key))
     {
          return 1;
     }
