@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
     std::string outputFile{""};
 
     // Variables for cipher.
-    const bool encrypt = true;
+    const bool encrypt = false;
     const size_t key = 5;
 
     // Check that there are arguments.

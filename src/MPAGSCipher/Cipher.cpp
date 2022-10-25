@@ -7,11 +7,10 @@ std::string runCaesarCipher( const std::string& inputText,
 	const size_t key, const bool encrypt)
 {
 	// Create the alphabet container and output string.
-	std::string alphabet = "abcdefghijklmnopqrstuvwxys";
+	std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //"abcdefghijklmnopqrstuvwxys";
 	std::string outputString = "";
 	// Loop over input text.
-	size_t i = 0;
-	while (i < inputText.size())
+	for (size_t i = 0; i < inputText.size(); i++)
 	{
 	char currentChar = inputText.at(i);
 	auto it = std::find(alphabet.begin(), alphabet.end(), currentChar);
@@ -22,7 +21,6 @@ std::string runCaesarCipher( const std::string& inputText,
 	charIndex = (charIndex - key)%26;
 	}
 	outputString += alphabet.at(charIndex);
-	++i;
 	}
 	// For each character find the corresponding position in the alphabet.
 
